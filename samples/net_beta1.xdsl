@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="Network1" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="Gender">
+			<state id="male" />
+			<state id="female" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Kinematics">
+			<state id="poor" />
+			<state id="good" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="SSC">
+			<state id="poor" />
+			<state id="average" />
+			<state id="good" />
+			<probabilities>0.3 0.5 0.2</probabilities>
+		</cpt>
+		<cpt id="Somatotype">
+			<state id="Ectomorph" />
+			<state id="Mesomorph" />
+			<state id="Endomorph" />
+			<probabilities>0.3 0.4 0.3</probabilities>
+		</cpt>
+		<cpt id="Flexibility">
+			<state id="loose" />
+			<state id="tight" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Gross_Mechanical_Efficiency">
+			<state id="poor" />
+			<state id="average" />
+			<state id="good" />
+			<state id="excellent" />
+			<parents>SSC Somatotype Kinematics Flexibility</parents>
+			<probabilities>0.25 0.55 0.15 0.05 0.2 0.6 0.15 0.05 0.15 0.6 0.2 0.05 0.1 0.6 0.25 0.05 0.65 0.32 0.025 0.005 0.63 0.34 0.025 0.005 0.61 0.36 0.025 0.005 0.59 0.38 0.025 0.005 0.85 0.13 0.015 0.005 0.83 0.15 0.015 0.005 0.8100000000000001 0.17 0.015 0.005 0.79 0.19 0.015 0.005 0.1 0.2 0.5 0.2 0.1 0.2 0.48 0.22 0.05 0.25 0.45 0.25 0.05 0.2 0.45 0.3 0.1 0.3 0.4 0.2 0.1 0.29 0.4 0.21 0.1 0.25 0.4 0.25 0.1 0.24 0.4 0.26 0.3 0.39 0.22 0.09 0.26 0.41 0.24 0.09 0.16 0.45 0.3 0.09 0.13 0.44 0.34 0.09 0.05 0.15 0.5 0.3 0.04 0.16 0.45 0.35 0.04 0.21 0.4 0.35 0.04 0.12 0.44 0.4 0.1 0.25 0.4 0.25 0.1 0.2 0.4 0.3 0.05 0.25 0.4 0.3 0.05 0.25 0.35 0.35 0.1 0.28 0.5 0.12 0.1 0.28 0.47 0.15 0.1 0.28 0.42 0.2 0.1 0.28 0.42 0.2</probabilities>
+		</cpt>
+		<cpt id="Body_Fat">
+			<state id="low" />
+			<state id="average" />
+			<state id="high" />
+			<probabilities>0.5 0.5 0</probabilities>
+		</cpt>
+		<cpt id="Muscle_Fibre_Type">
+			<state id="Type_I" />
+			<state id="Type_II" />
+			<probabilities>0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="Running_Economy">
+			<state id="low" />
+			<state id="average" />
+			<state id="high" />
+			<parents>Gross_Mechanical_Efficiency Gender Body_Fat Muscle_Fibre_Type</parents>
+			<probabilities>0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0</probabilities>
+		</cpt>
+		<cpt id="LT____VO2max_">
+			<state id="low" />
+			<state id="middle" />
+			<state id="high" />
+			<parents>Running_Economy</parents>
+			<probabilities>0.5 0.5 0 0.5 0.5 0 0.5 0.5 0</probabilities>
+		</cpt>
+		<cpt id="Performance__VO2_">
+			<state id="low" />
+			<state id="average" />
+			<state id="high" />
+			<parents>LT____VO2max_</parents>
+			<probabilities>0.5 0.5 0 0.5 0.5 0 0.5 0.5 0</probabilities>
+		</cpt>
+		<cpt id="Maximal_oxygen_consumption">
+			<state id="poor" />
+			<state id="average" />
+			<state id="high" />
+			<probabilities>0.2 0.5 0.3</probabilities>
+		</cpt>
+		<cpt id="Lactate_Threshold">
+			<state id="low" />
+			<state id="middle" />
+			<state id="high" />
+			<parents>LT____VO2max_ Maximal_oxygen_consumption</parents>
+			<probabilities>0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0</probabilities>
+		</cpt>
+		<cpt id="Performance__">
+			<state id="low" />
+			<state id="average" />
+			<state id="good" />
+			<parents>Performance__VO2_ Running_Economy Lactate_Threshold</parents>
+			<probabilities>0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0</probabilities>
+		</cpt>
+		<cpt id="P_v_">
+			<state id="poor" />
+			<state id="average" />
+			<state id="good" />
+			<state id="excellent" />
+			<parents>Performance__ Lactate_Threshold</parents>
+			<probabilities>0.5 0.5 0 0 0.5 0.5 0 0 0.25 0.25 0.25 0.25 0.5 0.5 0 0 0.5 0.5 0 0 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.0.4843.0" name="Network1" faultnameformat="nodestate">
+			<node id="P_v_">
+				<name>Speed</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>217 43 332 119</position>
+				<barchart active="true" width="144" height="114" />
+			</node>
+			<node id="Lactate_Threshold">
+				<name>Lactate Threshold</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>285 184 391 253</position>
+				<barchart active="true" width="153" height="88" />
+			</node>
+			<node id="Running_Economy">
+				<name>Running Economy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>732 247 829 307</position>
+				<barchart active="true" width="166" height="88" />
+			</node>
+			<node id="Gross_Mechanical_Efficiency">
+				<name>Gross Mechanical Efficiency</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>532 376 666 451</position>
+				<barchart active="true" width="227" height="110" />
+			</node>
+			<node id="Muscle_Fibre_Type">
+				<name>Muscle Fibre Type</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>858 387 977 453</position>
+				<barchart active="true" width="128" height="88" />
+			</node>
+			<node id="SSC">
+				<name>SSC</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>248 525 316 564</position>
+				<barchart active="true" width="128" height="88" />
+			</node>
+			<node id="Maximal_oxygen_consumption">
+				<name>Maximal oxygen consumption</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>100 320 245 391</position>
+				<barchart active="true" width="198" height="112" />
+			</node>
+			<node id="Gender">
+				<name>Gender</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>323 412 391 451</position>
+				<barchart active="true" width="128" height="66" />
+			</node>
+			<node id="Somatotype">
+				<name>Somatotype</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>370 516 472 572</position>
+				<barchart active="true" width="128" height="88" />
+			</node>
+			<node id="Kinematics">
+				<name>Kinematics</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>512 511 612 557</position>
+				<barchart active="true" width="128" height="66" />
+			</node>
+			<node id="Flexibility">
+				<name>Flexibility</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>647 513 747 557</position>
+				<barchart active="true" width="128" height="66" />
+			</node>
+			<node id="Body_Fat">
+				<name>Body Fat</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>735 394 835 447</position>
+				<barchart active="true" width="128" height="88" />
+			</node>
+			<node id="LT____VO2max_">
+				<name>% VO2max</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>321 286 446 358</position>
+				<barchart active="true" width="128" height="88" />
+			</node>
+			<node id="Performance__VO2_">
+				<name>Performance (VO2)</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>502 187 619 257</position>
+				<barchart active="true" width="167" height="88" />
+			</node>
+			<node id="Performance__">
+				<name>Mechanical Power</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="12" />
+				<position>506 73 621 142</position>
+				<barchart active="true" width="176" height="88" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
