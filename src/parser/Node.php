@@ -30,8 +30,10 @@ class Node {
         $this->_parents[] = $parent;
     }
 
-    /**@var $parents Array
-     * @var $network SMILE_Network*/
+    /*
+     * @var $parents Array
+     * @var $network SMILE_Network
+     * */
     public function addAllParents($parents, $network){
         if(is_array($parents) && count($parents) > 0){
             foreach($parents as $parentName){

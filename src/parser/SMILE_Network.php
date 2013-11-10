@@ -4,7 +4,10 @@
  * @author Oleksandr Shynkariuk oleksandr.shynkariuk@gmail.com
  */
 
-
+/*
+ * Represents SMILE Neural Network. Is a high-level object which is constructed after network paring process.
+ * @author Oleksandr Shynkariuk oleksandr.shynkariuk@gmail.com
+ * */
 class SMILE_Network {
     private $_nodes = array();
 
@@ -39,23 +42,24 @@ class SMILE_Network {
                     }
                     $node = new Node($id, $statesMap);
                     $node->addAllParents($parents, $this);
-                    //array_push($this->_nodes, $node);
                     $this->_nodes[(string)$id] = $node;
 
                 }
-            }//and skip 'extensions'
+            }//skip 'extensions' section
         }
-        var_dump($this->_nodes);
-
     }
 
     public function getNodeByName($name){
         if(empty($this->_nodes))
             return null;
         else {
-            //echo "!PName: " . $name . "\n";
-            //var_dump($this->_nodes);
             return $this->_nodes[(string)$name];
         }
     }
+
+    public function getNodes(){
+        return $this->_nodes;
+    }
+
+
 }
