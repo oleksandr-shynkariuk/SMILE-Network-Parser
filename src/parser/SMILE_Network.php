@@ -1,4 +1,5 @@
 <?php
+namespace Parser;
 /*
  * TODO: add class description here
  * @author Oleksandr Shynkariuk oleksandr.shynkariuk@gmail.com
@@ -8,6 +9,8 @@
  * Represents SMILE Neural Network. Is a high-level object which is constructed after network paring process.
  * @author Oleksandr Shynkariuk oleksandr.shynkariuk@gmail.com
  * */
+use SimpleXMLElement;
+
 class SMILE_Network {
     private $_nodes = array();
 
@@ -40,10 +43,17 @@ class SMILE_Network {
                         $statesMap[(string)$st] = $probabilities[$i];
                         ++$i;
                     }
-                    $node = new Node($id, $statesMap);
-                    $node->addAllParents($parents, $this);
-                    $this->_nodes[(string)$id] = $node;
+                    if ($parents && count($parents) > 0) {
+                        //TODO: construct table of Definitions for this node
+                        $node = new HiddenLayerNode($id, $statesMap);
+                        $node->addAllParents($parents, $this);
+                        $node->generateDefinitionTable($probabilities);
+                        $this->_nodes[(string)$id] = $node;
 
+                    } else {
+                        $node = new Node($id, $statesMap);
+                        $this->_nodes[(string)$id] = $node;
+                    }
                 }
             }//skip 'extensions' section
         }
