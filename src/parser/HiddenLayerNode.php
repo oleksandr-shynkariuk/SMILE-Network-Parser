@@ -42,13 +42,10 @@ class HiddenLayerNode extends Node {
      * generate a table with probabilities for every combination of states of the parents
      */
     public function generateDefinitionTable($probabilities){
-        //echo "Probs Size: " . count($probabilities) . "\t";
-        //echo "Parents Size: " . count($this->_parents) . "\n";
         $rows = count(parent::getStatesMap());
 
         $i = 0;
         $arr = array();
-        echo "rows: " . $rows . " " . (count($probabilities) / $rows);
         foreach($probabilities as $prob){
             if($i % $rows == 0){
                 if(!empty($arr)){
@@ -61,8 +58,6 @@ class HiddenLayerNode extends Node {
             }
             ++$i;
         }
-        echo "ID: " . parent::getId() . "\n";
         $this->_definitionTable[] = $arr;//don't forget to add the last entry :)
-        var_dump($this->_definitionTable);
     }
 }
