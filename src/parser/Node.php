@@ -21,7 +21,7 @@ class Node {
         $this->_id = $id;
     }
 
-    public function getId($id){
+    public function getId(){
         return $this->_id;
     }
 

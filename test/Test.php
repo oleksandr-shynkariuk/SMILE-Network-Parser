@@ -15,6 +15,6 @@ class Test extends PHPUnit_Framework_TestCase {
     public function testOpen(){
         $network = new SMILE_Network();
         $network->parseFromFile("../samples/net_beta1.xdsl");
-        var_dump($network->getNodes());
+        //var_dump($network->getNodes());
     }
 }
