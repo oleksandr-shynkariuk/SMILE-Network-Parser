@@ -8,10 +8,12 @@ namespace Parser;
 
 class HiddenLayerNode extends Node {
     private $_parents;
+    private $_definitionTable;
 
     public function __construct($id, $statesMap){
         parent::__construct($id, $statesMap);
         $this->_parents = array();
+        $this->_definitionTable = array();
     }
 
     public function addParent($parent){
@@ -43,6 +45,20 @@ class HiddenLayerNode extends Node {
         echo "Probs Size: " . count($probabilities) . "\t";
         echo "Parents Size: " . count($this->_parents) . "\n";
         $rows = count(parent::getStatesMap());
+
+        $i = 0;
+        $arr = array();
+        foreach($probabilities as $prob){
+            if($i % $rows == 0){
+                if(!empty($arr))
+                    $this->_definitionTable[] = $arr;
+                $arr = array();
+                $arr[] = $prob;
+            } else{
+                $arr[] = $prob;
+            }
+        }
+        var_dump($this->_definitionTable);
         echo "States Map: " . count(parent::getStatesMap()) . "\n";
     }
 }
